@@ -19,6 +19,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  cupertino_icons: ^0.1.2
   boxicons_flutter: ^1.1.0
   flutter_screenutil: ^0.6.0
 
