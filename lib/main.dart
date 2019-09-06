@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:furnitur/screens/home.dart';
+import 'package:furnitur/core/models/products.dart';
+import 'package:furnitur/ui/views/home.dart';
+import 'package:provider/provider.dart';
 
 void main() => runApp(FurniturApp());
 
@@ -11,10 +13,16 @@ class FurniturApp extends StatelessWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    return MaterialApp(
-      title: 'Furnitur',
-      home: FurniturHome(),
-      debugShowCheckedModeBanner: false,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<ProductsModel>(
+            builder: (context) => ProductsModel()),
+      ],
+      child: MaterialApp(
+        title: 'Furnitur',
+        home: HomeView(),
+        debugShowCheckedModeBanner: false,
+      ),
     );
   }
 }
