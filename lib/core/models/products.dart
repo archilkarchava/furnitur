@@ -4,14 +4,14 @@ import 'package:meta/meta.dart';
 
 class ProductsModel extends ChangeNotifier {
   static final _products = data.products;
-  String _activeCategory = "Стулья";
+  String _activeCategory = "Стул";
   Product getById(int id) =>
       _products.singleWhere((product) => product.id == id, orElse: () => null);
 
   List<Product> getProductsInCategory(String category) =>
       _products.where((product) => product.category == category).toList();
-  get length => _products.length;
-  get activeCategory => _activeCategory;
+  List<Product> get items => _products;
+  String get activeCategory => _activeCategory;
   void setActiveCategory(String category) {
     _activeCategory = category;
     notifyListeners();

@@ -16,7 +16,11 @@ class HomeView extends StatelessWidget {
     final String _currentCategory = products.activeCategory;
     return Scaffold(
       backgroundColor: Color(0xffFFFFFF),
-      appBar: appBar(leftButton: menuButton(), rightButton: cartButton()),
+      appBar: appBar(
+          leftButton: menuButton(),
+          rightButton: CartButton(
+            context: context,
+          )),
       body: Padding(
         padding: EdgeInsets.only(
           left: 30,

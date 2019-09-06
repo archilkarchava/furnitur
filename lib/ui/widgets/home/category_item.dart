@@ -5,15 +5,19 @@ import 'package:provider/provider.dart';
 
 class CategoryItem extends StatelessWidget {
   final String category;
-  
-  CategoryItem({@required final this.category});
+
+  final String displayName;
+
+  final String imageAsset;
+
+  CategoryItem(
+      {@required this.category, @required this.displayName, this.imageAsset});
   @override
   Widget build(BuildContext context) {
     var products = Provider.of<ProductsModel>(context);
     return GestureDetector(
       onTap: () {
         products.setActiveCategory(category);
-
       },
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
@@ -30,15 +34,15 @@ class CategoryItem extends StatelessWidget {
             ),
             child: Padding(
               padding: EdgeInsets.all(7),
-              child: Image.asset(
-                products.getProductsInCategory(category)[0].image,
-              ),
+              child: Image.asset(imageAsset != null
+                  ? imageAsset
+                  : products.getProductsInCategory(category)[0].image),
             ),
           ),
           Padding(
             padding: EdgeInsets.only(top: 5),
             child: Text(
-              category,
+              displayName,
               style: categoryTextStyle,
             ),
           ),

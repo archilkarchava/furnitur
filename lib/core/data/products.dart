@@ -8,7 +8,7 @@ final products = [
       description:
           "Высокая спинка обеспечивает оптимальный комфорт. Массив дерева – износостойкий натуральный материал.",
       id: 0,
-      category: "Стулья"),
+      category: "Стул"),
   Product(
       name: "КАУСТБИ",
       image: "assets/images/image_06.png",
@@ -16,7 +16,7 @@ final products = [
       description:
           "Массив сосны – натуральный материал, который со временем выглядит только лучше.",
       id: 1,
-      category: "Стулья"),
+      category: "Стул"),
   Product(
       name: "МОРБИЛОНГА",
       image: "assets/images/image_07.png",
@@ -24,7 +24,7 @@ final products = [
       description:
           "Лаконичный дизайн подчеркивает традиционной стиль деревянной мебели.",
       id: 2,
-      category: "Столы"),
+      category: "Стол"),
   Product(
       name: "НОРДВИКЕН",
       image: "assets/images/image_08.png",
@@ -32,7 +32,7 @@ final products = [
       description:
           "Этот большой деревянный обеденный стол очень скоро станет центром притяжения для всех членов вашей семьи. Легко раскладывается и благодаря устойчивой конструкции и прочным материалам будет радовать вас долгие годы.",
       id: 3,
-      category: "Столы"),
+      category: "Стол"),
   Product(
       name: "НОРРОКЕР",
       image: "assets/images/image_09.png",
@@ -40,14 +40,14 @@ final products = [
       description:
           "Каждый стол уникален – благодаря естественному рисунку натуральной древесины и вариативности ее оттенков.",
       id: 4,
-      category: "Столы"),
+      category: "Стол"),
   Product(
       name: "ТОММАРЮД",
       image: "assets/images/image_10.png",
       price: 11999,
       description: "Лаконичный дизайн подойдет для самых разных интерьеров.",
       id: 5,
-      category: "Столы"),
+      category: "Стол"),
   Product(
       name: "ХЕМНЭС",
       image: "assets/images/image_11.png",
@@ -55,7 +55,7 @@ final products = [
       description:
           "Мы используем древесину из ответственно управляемых лесных хозяйств. Этот прочный натуральный материал с годами выглядит только лучше. Можно комбинировать с другой мебелью серии ХЕМНЭС.",
       id: 6,
-      category: "Кровати"),
+      category: "Кровать"),
   Product(
       name: "МАЛЬМ",
       image: "assets/images/image_12.png",
@@ -63,7 +63,7 @@ final products = [
       description:
           "Эту кровать лаконичного дизайна с отделкой из шпона можно поставить в середине комнаты или изголовьем к стене. Практичные вместительные ящики легко выдвигаются благодаря колесикам.",
       id: 7,
-      category: "Кровати"),
+      category: "Кровать"),
   Product(
       name: "НОРДЛИ",
       image: "assets/images/image_13.png",
@@ -71,7 +71,7 @@ final products = [
       description:
           "Каркас НОРДЛИ – это не только удобная кровать, но и практичный модуль для хранения с 6 вместительными ящиками. В нем даже в небольшой комнате поместятся дополнительные одеяла, одежда и, конечно, сладкие сны.",
       id: 8,
-      category: "Кровати"),
+      category: "Кровать"),
   Product(
       name: "БРИМНЭС",
       image: "assets/images/image_14.png",
@@ -79,7 +79,7 @@ final products = [
       description:
           "Регулируемые боковины кровати позволяют использовать матрасы разной толщины.",
       id: 9,
-      category: "Кровати"),
+      category: "Кровать"),
   Product(
       name: "ИКЕА ПС 2017",
       image: "assets/images/image_15.png",
@@ -87,21 +87,21 @@ final products = [
       description:
           "Направив свет на картину или просто осветив комнату светом, отраженным от стены, вы сделаете интерьер особенно уютным.",
       id: 10,
-      category: "Лампы"),
+      category: "Лампа"),
   Product(
       name: "ФАДУ",
       image: "assets/images/image_16.png",
       price: 1299,
       description: "Создает мягкое уютное освещение для настроения.",
       id: 11,
-      category: "Лампы"),
+      category: "Лампа"),
   Product(
       name: "ИНГАРЕД",
       image: "assets/images/image_17.png",
       price: 599,
       description: "Абажур из ткани создает рассеянное декоративное освещение.",
       id: 12,
-      category: "Лампы"),
+      category: "Лампа"),
   Product(
       name: "ТЭРНАБИ",
       image: "assets/images/image_18.png",
@@ -109,5 +109,5 @@ final products = [
       description:
           "Этот компактный светильник создаст в располагающее освещение в любом уголке вашего дома.",
       id: 13,
-      category: "Лампы"),
+      category: "Лампа"),
 ];

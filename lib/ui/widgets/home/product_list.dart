@@ -32,7 +32,7 @@ class ProductList extends StatelessWidget {
       itemCount: _productsInCategory.length,
       itemBuilder: (context, index) {
         final product = _productsInCategory[index];
-        return ProductItem(product.id);
+        return ProductItem(product);
       },
     );
   }

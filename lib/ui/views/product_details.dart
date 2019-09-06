@@ -9,7 +9,6 @@ import 'package:furnitur/ui/widgets/shared/appbar.dart';
 class ProductDetailsView extends StatelessWidget {
   final Product product;
   ProductDetailsView(this.product);
-  final bool _inCart = false;
   final bool _isFav = false;
 
   @override
@@ -90,7 +89,7 @@ class ProductDetailsView extends StatelessWidget {
                       children: <Widget>[
                         favButton(isActive: _isFav),
                         SizedBox(height: 15),
-                        addInCartButton(isActive: _inCart),
+                        AddInCartButton(product),
                       ],
                     ),
                   ),

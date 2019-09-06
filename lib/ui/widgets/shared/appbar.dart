@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 PreferredSizeWidget appBar(
-    {IconButton leftButton, IconButton rightButton, Color backgroundColor}) {
+    {Widget leftButton, Widget rightButton, Color backgroundColor}) {
   return PreferredSize(
     preferredSize: Size.fromHeight(90),
     child: Container(
