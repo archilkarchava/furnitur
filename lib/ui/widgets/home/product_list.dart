@@ -21,9 +21,9 @@ class ProductList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _products = Provider.of<ProductsModel>(context);
-    _products.addListener(() {
-      _scrollProductsToBeginning();
-    });
+    // _products.addListener(() {
+    //   _scrollProductsToBeginning();
+    // });
     final _productsInCategory = _products.getProductsInCategory(category);
     return ListView.builder(
       scrollDirection: Axis.horizontal,

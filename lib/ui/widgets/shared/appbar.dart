@@ -21,7 +21,6 @@ PreferredSizeWidget appBar(
                   margin: const EdgeInsets.only(right: 16), child: rightButton),
             ],
           ),
-          SizedBox(height: 10),
         ],
       ),
     ),

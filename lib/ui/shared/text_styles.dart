@@ -103,3 +103,34 @@ final productDetailsDescriptionTextStyle = TextStyle(
   fontWeight: FontWeight.w400,
   fontStyle: FontStyle.normal,
 );
+
+final cartItemNameTextStyle = TextStyle(
+  fontFamily: 'Roboto',
+  color: Color(0xff647a86),
+  fontSize: 16,
+  fontWeight: FontWeight.w500,
+  fontStyle: FontStyle.normal,
+);
+
+final cartItemPriceTextStyle = TextStyle(
+  fontFamily: 'Roboto',
+  color: Color(0xff647a86),
+  fontSize: 16,
+  fontWeight: FontWeight.w500,
+  fontStyle: FontStyle.normal,
+);
+final buyButtonTextStyle = TextStyle(
+  fontFamily: 'Roboto',
+  color: Color(0xff647a86),
+  fontSize: 30,
+  fontWeight: FontWeight.w700,
+  fontStyle: FontStyle.normal,
+);
+
+final totalSumTextStyle = TextStyle(
+  fontFamily: 'Roboto',
+  color: Color(0xff647a86),
+  fontSize: 24,
+  fontWeight: FontWeight.w700,
+  fontStyle: FontStyle.normal,
+);
