@@ -3,34 +3,40 @@ import 'package:furnitur/core/models/products.dart';
 
 class CartModel extends ChangeNotifier {
   final ProductsModel _products;
+  final CartModel previous;
   final List<Product> _inCart;
-
-  CartModel(this._products, CartModel previous)
-      : assert(_products != null),
-        _inCart = previous?._inCart ?? [];
+  CartModel(this._products, this.previous) : _inCart = previous?._inCart ?? [];
 
   List<Product> get items =>
       _inCart.map((product) => _products.getById(product.id)).toList();
+  List<Product> get itemsUnique => this.items.toSet().toList();
   int get totalPrice =>
       items.fold(0, (total, current) => total + current.price);
   bool contains(Product product) => _inCart.contains(product);
 
-  void add(Product product) {
-    _inCart.add(product);
+  int getAmountOf(Product product) {
+    return _inCart.where((cartItem) => cartItem.id == product.id).length;
+  }
+
+  void add(Product product, {int amount = 1}) {
+    for (var i = 0; i < amount; i++) {
+      _inCart.add(product);
+    }
     notifyListeners();
   }
 
-  void remove(Product product) {
-    _inCart.remove(product);
+  void remove(Product product, {int amount = 1}) {
+    for (var i = 0; i < amount; i++) {
+      _inCart.remove(product);
+    }
     notifyListeners();
   }
 
   void toggleInCart(Product product) {
     if (_inCart.contains(product)) {
-      _inCart.remove(product);
+      this.remove(product);
     } else {
-      _inCart.add(product);
+      this.add(product);
     }
-    notifyListeners();
   }
 }

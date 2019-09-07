@@ -40,7 +40,7 @@ final filterTextActiveStyle = TextStyle(
   fontStyle: FontStyle.normal,
 );
 
-final productPriceTextStyle = TextStyle(
+final productListPriceTextStyle = TextStyle(
   fontFamily: 'Roboto',
   color: Color(0xff647a86),
   fontSize: 18,
@@ -48,18 +48,26 @@ final productPriceTextStyle = TextStyle(
   fontStyle: FontStyle.normal,
 );
 
-final productNameTextStyle = TextStyle(
+final productDetailsPriceTextStyle = TextStyle(
   fontFamily: 'Roboto',
   color: Color(0xff647a86),
-  fontSize: 30,
+  fontSize: 32,
   fontWeight: FontWeight.w700,
   fontStyle: FontStyle.normal,
 );
 
-final productDescriptionTextStyle = TextStyle(
+final productDetailsNameTextStyle = TextStyle(
   fontFamily: 'Roboto',
   color: Color(0xff647a86),
-  fontSize: 14,
+  fontSize: 38,
+  fontWeight: FontWeight.w700,
+  fontStyle: FontStyle.normal,
+);
+
+final productDetailsDescriptionTextStyle = TextStyle(
+  fontFamily: 'Roboto',
+  color: Color(0xff647a86),
+  fontSize: 16,
   fontWeight: FontWeight.w400,
   fontStyle: FontStyle.normal,
 );

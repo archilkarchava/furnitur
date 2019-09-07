@@ -1,5 +1,6 @@
 import 'package:boxicons_flutter/boxicons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:furnitur/core/models/amount_selector.dart';
 import 'package:furnitur/core/models/cart.dart';
 import 'package:furnitur/core/models/products.dart';
 import 'package:provider/provider.dart';
@@ -10,15 +11,17 @@ class AddInCartButton extends StatelessWidget {
   AddInCartButton(this.product);
   @override
   Widget build(BuildContext context) {
-    var cart = Provider.of<CartModel>(context);
-    var _isActive = cart.contains(product);
+    var _cart = Provider.of<CartModel>(context);
+    var _amountSelector = Provider.of<AmountSelectorModel>(context);
+    // var _isActive = cart.contains(product);
     return GestureDetector(
       onTap: () {
-        cart.toggleInCart(product);
+        _cart.add(product, amount: _amountSelector.amount);
+        _amountSelector.reset();
       },
       child: Container(
-        width: 80,
-        height: 80,
+        width: 70,
+        height: 70,
         decoration: BoxDecoration(
           color: Color(0xffffe24a),
           borderRadius: BorderRadius.circular(18),
@@ -32,7 +35,7 @@ class AddInCartButton extends StatelessWidget {
         ),
         child: Icon(
           Boxicons.bxShoppingBag,
-          color: _isActive ? Colors.red : Color(0xff647A86),
+          color: Color(0xff647A86),
           size: 30,
         ),
       ),

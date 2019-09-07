@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:furnitur/core/models/cart.dart';
-import 'package:furnitur/core/models/favourites.dart';
 import 'package:furnitur/core/models/products.dart';
 import 'package:furnitur/core/routes.dart';
 import 'package:furnitur/ui/views/cart.dart';
@@ -20,18 +19,12 @@ class FurniturApp extends StatelessWidget {
     // var _products = Provider.of<ProductsModel>(context);
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider<ProductsModel>(
-            builder: (context) => ProductsModel()),
+        ChangeNotifierProvider<ProductsModel>(builder: (_) => ProductsModel()),
         ChangeNotifierProxyProvider<ProductsModel, CartModel>(
-          // initialBuilder: (_) => CartModel(_products, null),
-          builder: (context, products, previousCart) =>
+          initialBuilder: (_) => CartModel(null, null),
+          builder: (_, products, previousCart) =>
               CartModel(products, previousCart),
-        ),
-        ChangeNotifierProxyProvider<ProductsModel, FavouritesModel>(
-          // initialBuilder: (_) => FavouritesModel(_products, null),
-          builder: (context, products, previousFavourites) =>
-              FavouritesModel(products, previousFavourites),
-        ),
+        )
       ],
       child: MaterialApp(
         title: 'Furnitur',

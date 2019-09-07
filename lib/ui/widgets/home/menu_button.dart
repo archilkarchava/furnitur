@@ -9,7 +9,7 @@ IconButton menuButton() {
     ),
     iconSize: 25,
     // alignment: Alignment.centerLeft,
-    tooltip: 'Navigation menu',
+    tooltip: 'Меню навигации',
     onPressed: () {},
   );
 }

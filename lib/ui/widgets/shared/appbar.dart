@@ -14,10 +14,11 @@ PreferredSizeWidget appBar(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Container(
-                margin: EdgeInsets.only(left: 16),
+                margin: const EdgeInsets.only(left: 16),
                 child: leftButton,
               ),
-              Container(margin: EdgeInsets.only(right: 16), child: rightButton),
+              Container(
+                  margin: const EdgeInsets.only(right: 16), child: rightButton),
             ],
           ),
           SizedBox(height: 30),

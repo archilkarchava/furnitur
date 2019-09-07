@@ -17,7 +17,7 @@ class ProductsModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  operator [](int i) => _products[i];
+  Product operator [](int i) => _products[i];
 }
 
 @immutable

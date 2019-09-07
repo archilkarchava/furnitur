@@ -33,14 +33,14 @@ class CategoryItem extends StatelessWidget {
               ),
             ),
             child: Padding(
-              padding: EdgeInsets.all(7),
+              padding: const EdgeInsets.all(7),
               child: Image.asset(imageAsset != null
                   ? imageAsset
                   : products.getProductsInCategory(category)[0].image),
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 5),
+            padding: const EdgeInsets.only(top: 5),
             child: Text(
               displayName,
               style: categoryTextStyle,

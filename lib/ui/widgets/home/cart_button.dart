@@ -4,7 +4,7 @@ import 'package:furnitur/ui/views/cart.dart';
 
 class CartButton extends StatelessWidget {
   final BuildContext context;
-  CartButton({this.context});
+  CartButton(this.context);
   @override
   Widget build(BuildContext context) {
     return IconButton(
@@ -14,7 +14,7 @@ class CartButton extends StatelessWidget {
       ),
       iconSize: 25,
       // alignment: Alignment.centerRight,
-      tooltip: 'Cart',
+      tooltip: 'Корзина',
       onPressed: () {
         Navigator.push(
           context,

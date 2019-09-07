@@ -10,7 +10,7 @@ class CategoryList extends StatelessWidget {
       child: Row(
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.only(
+            padding: const EdgeInsets.only(
               right: 20,
             ),
             child: CategoryItem(
@@ -19,7 +19,7 @@ class CategoryList extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(
+            padding: const EdgeInsets.only(
               right: 20,
             ),
             child: CategoryItem(
@@ -28,7 +28,7 @@ class CategoryList extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(
+            padding: const EdgeInsets.only(
               right: 20,
             ),
             child: CategoryItem(
@@ -37,7 +37,7 @@ class CategoryList extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(
+            padding: const EdgeInsets.only(
               right: 20,
             ),
             child: CategoryItem(

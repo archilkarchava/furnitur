@@ -13,7 +13,7 @@ Container searchBar() {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         Padding(
-          padding: EdgeInsets.only(
+          padding: const EdgeInsets.only(
             left: 21,
           ),
           child: Text(
@@ -22,7 +22,7 @@ Container searchBar() {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(
+          padding: const EdgeInsets.only(
             right: 21,
           ),
           child: Icon(

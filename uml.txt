@@ -1,0 +1,55 @@
+@startuml
+set namespaceSeparator ::
+
+class "furnitur::core::models::amount_selector.dart::AmountSelectorModel" {
+  -int _amount
+  +int amount
+  +void reset()
+  +void increment()
+  +void decrement()
+}
+
+"flutter::src::foundation::change_notifier.dart::ChangeNotifier" <|-- "furnitur::core::models::amount_selector.dart::AmountSelectorModel"
+
+class "furnitur::core::models::cart.dart::CartModel" {
+  -ProductsModel _products
+  +CartModel previous
+  -List<Product> _inCart
+  +List<Product> items
+  +List<Product> itemsUnique
+  +int totalPrice
+  +bool contains()
+  +int getAmountOf()
+  +void add()
+  +void remove()
+  +void toggleInCart()
+}
+
+"furnitur::core::models::cart.dart::CartModel" o-- "furnitur::core::models::products.dart::ProductsModel"
+"furnitur::core::models::cart.dart::CartModel" o-- "furnitur::core::models::cart.dart::CartModel"
+"flutter::src::foundation::change_notifier.dart::ChangeNotifier" <|-- "furnitur::core::models::cart.dart::CartModel"
+
+class "furnitur::core::models::products.dart::ProductsModel" {
+  {static} -List<Product> _products
+  -String _activeCategory
+  +List<Product> items
+  +String activeCategory
+  +Product getById()
+  +List getProductsInCategory()
+  +void setActiveCategory()
+  +Product []()
+}
+
+"flutter::src::foundation::change_notifier.dart::ChangeNotifier" <|-- "furnitur::core::models::products.dart::ProductsModel"
+
+class "furnitur::core::models::products.dart::Product" {
+  +int id
+  +String name
+  +int price
+  +String image
+  +String description
+  +String category
+  +int hashCode
+  +bool ==()
+}
+@enduml
