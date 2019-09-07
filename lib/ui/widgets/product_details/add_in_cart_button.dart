@@ -11,13 +11,21 @@ class AddInCartButton extends StatelessWidget {
   AddInCartButton(this.product);
   @override
   Widget build(BuildContext context) {
-    var _cart = Provider.of<CartModel>(context);
-    var _amountSelector = Provider.of<AmountSelectorModel>(context);
-    // var _isActive = cart.contains(product);
+    final _cart = Provider.of<CartModel>(context);
+    final _amountSelector = Provider.of<AmountSelectorModel>(context);
+    final snackBar = SnackBar(
+      content: Text(
+          'Вы успешно добавили ${product.category} ${product.name} в колличестве ${_amountSelector.amount} шт. в корзину.'),
+      action: SnackBarAction(
+        label: 'ОК',
+        onPressed: () {},
+      ),
+    );
     return GestureDetector(
       onTap: () {
         _cart.add(product, amount: _amountSelector.amount);
         _amountSelector.reset();
+        Scaffold.of(context).showSnackBar(snackBar);
       },
       child: Container(
         width: 70,
