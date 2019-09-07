@@ -8,7 +8,7 @@ IconButton backButton(BuildContext context) {
       color: Color(0xff647A86),
     ),
     iconSize: 25,
-    tooltip: 'Back',
+    tooltip: 'Назад',
     onPressed: () {
       Navigator.pop(context);
     },
