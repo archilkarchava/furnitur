@@ -11,13 +11,16 @@ class CategoryItem extends StatelessWidget {
   final String imageAsset;
 
   CategoryItem(
-      {@required this.category, @required this.displayName, this.imageAsset});
+      {@required this.category,
+      @required this.displayName,
+      @required this.imageAsset});
   @override
   Widget build(BuildContext context) {
-    var products = Provider.of<ProductsModel>(context);
+    final products = Provider.of<ProductsModel>(context);
     return GestureDetector(
       onTap: () {
         products.setActiveCategory(category);
+        products.setOnlyShowOnSale(false);
       },
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
@@ -34,9 +37,7 @@ class CategoryItem extends StatelessWidget {
             ),
             child: Padding(
               padding: const EdgeInsets.all(7),
-              child: Image.asset(imageAsset != null
-                  ? imageAsset
-                  : products.getProductsInCategory(category)[0].image),
+              child: Image.asset(imageAsset),
             ),
           ),
           Padding(

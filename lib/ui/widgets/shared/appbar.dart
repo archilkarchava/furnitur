@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 PreferredSizeWidget appBar(
     {Widget leftButton, Widget rightButton, Color backgroundColor}) {
   return PreferredSize(
-    preferredSize: Size.fromHeight(90),
+    preferredSize: Size.fromHeight(70),
     child: Container(
       color: backgroundColor,
       child: Column(
@@ -21,7 +21,7 @@ PreferredSizeWidget appBar(
                   margin: const EdgeInsets.only(right: 16), child: rightButton),
             ],
           ),
-          SizedBox(height: 30),
+          SizedBox(height: 10),
         ],
       ),
     ),

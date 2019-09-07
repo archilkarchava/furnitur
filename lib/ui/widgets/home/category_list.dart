@@ -16,6 +16,7 @@ class CategoryList extends StatelessWidget {
             child: CategoryItem(
               displayName: "Стулья",
               category: "Стул",
+              imageAsset: "assets/images/image_05.png",
             ),
           ),
           Padding(
@@ -25,6 +26,7 @@ class CategoryList extends StatelessWidget {
             child: CategoryItem(
               displayName: "Столы",
               category: "Стол",
+              imageAsset: "assets/images/image_07.png",
             ),
           ),
           Padding(
@@ -34,6 +36,7 @@ class CategoryList extends StatelessWidget {
             child: CategoryItem(
               displayName: "Кровати",
               category: "Кровать",
+              imageAsset: "assets/images/image_11.png",
             ),
           ),
           Padding(
@@ -43,6 +46,7 @@ class CategoryList extends StatelessWidget {
             child: CategoryItem(
               displayName: "Лампы",
               category: "Лампа",
+              imageAsset: "assets/images/image_15.png",
             ),
           ),
         ],

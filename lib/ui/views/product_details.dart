@@ -9,6 +9,23 @@ import 'package:furnitur/ui/widgets/product_details/back_button.dart';
 import 'package:furnitur/ui/widgets/shared/appbar.dart';
 import 'package:provider/provider.dart';
 
+Widget _displayPrice(Product product) {
+  if (product.oldPrice != null && product.oldPrice > product.price) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: <Widget>[
+        Text("₽${product.price}", style: productDetailsSalePriceTextStyle),
+        SizedBox(
+          width: 20,
+        ),
+        Text("₽${product.oldPrice}", style: productDetailsOldPriceTextStyle),
+      ],
+    );
+  } else {
+    return Text("₽${product.price}", style: productDetailsPriceTextStyle);
+  }
+}
+
 class ProductDetailsView extends StatelessWidget {
   final Product product;
   ProductDetailsView(this.product);
@@ -33,9 +50,6 @@ class ProductDetailsView extends StatelessWidget {
                 Color(0xffFFFFFF),
                 Color(0xffE9F3F6),
               ],
-              // stops: [
-              //   0.0,
-              // ],
             ),
           ),
           child: Flex(
@@ -73,10 +87,7 @@ class ProductDetailsView extends StatelessWidget {
                             style: productDetailsNameTextStyle,
                           ),
                           SizedBox(height: 29),
-                          Text(
-                            "₽" + product.price.toString(),
-                            style: productDetailsPriceTextStyle,
-                          ),
+                          _displayPrice(product),
                           SizedBox(height: 20),
                           Padding(
                             padding: const EdgeInsets.only(right: 30),

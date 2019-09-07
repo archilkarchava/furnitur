@@ -3,7 +3,7 @@ import 'package:furnitur/core/models/products.dart';
 import 'package:furnitur/ui/shared/text_styles.dart';
 import 'package:furnitur/ui/widgets/home/cart_button.dart';
 import 'package:furnitur/ui/widgets/home/category_list.dart';
-import 'package:furnitur/ui/widgets/home/menu_button.dart';
+import 'package:furnitur/ui/widgets/home/filter_list.dart';
 import 'package:furnitur/ui/widgets/home/product_list.dart';
 import 'package:furnitur/ui/widgets/shared/appbar.dart';
 import 'package:provider/provider.dart';
@@ -15,8 +15,7 @@ class HomeView extends StatelessWidget {
     final String _currentCategory = products.activeCategory;
     return Scaffold(
       backgroundColor: Color(0xffFFFFFF),
-      appBar:
-          appBar(leftButton: menuButton(), rightButton: CartButton(context)),
+      appBar: appBar(rightButton: CartButton(context)),
       body: Padding(
         padding: const EdgeInsets.only(
           left: 30,
@@ -26,21 +25,14 @@ class HomeView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            // searchBar(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text("В наличии", style: filterTextActiveStyle),
-                Text("Распродажа", style: filterTextStyle),
-                Text("На заказ", style: filterTextStyle),
-              ],
+            FilterList(),
+            SizedBox(
+              height: 15,
             ),
             Expanded(
-              child: Padding(
-                  padding: const EdgeInsets.only(top: 32),
-                  child: ProductList(
-                    _currentCategory,
-                  )),
+              child: ProductList(
+                _currentCategory,
+              ),
             ),
           ],
         ),

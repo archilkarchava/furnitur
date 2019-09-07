@@ -17,7 +17,7 @@ class ProductList extends StatelessWidget {
 
   final ScrollController scrollController = ScrollController();
 
-  ProductList(this.category, {this.filter = "all"});
+  ProductList(this.category, {this.filter = "Все"});
   @override
   Widget build(BuildContext context) {
     final _products = Provider.of<ProductsModel>(context);

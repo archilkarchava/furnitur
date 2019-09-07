@@ -3,6 +3,29 @@ import 'package:furnitur/core/models/products.dart';
 import 'package:furnitur/ui/shared/text_styles.dart';
 import 'package:furnitur/ui/views/product_details.dart';
 
+Widget _displayPrice(Product product) {
+  if (product.oldPrice != null && product.oldPrice > product.price) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 25, right: 25, bottom: 25),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: <Widget>[
+          Text("₽${product.oldPrice}", style: productListOldPriceTextStyle),
+          SizedBox(
+            height: 5,
+          ),
+          Text("₽${product.price}", style: productListSalePriceTextStyle),
+        ],
+      ),
+    );
+  } else {
+    return Padding(
+      padding: const EdgeInsets.only(left: 25, right: 25, bottom: 25),
+      child: Text("₽${product.price}", style: productListPriceTextStyle),
+    );
+  }
+}
+
 class ProductItem extends StatelessWidget {
   final Product product;
   ProductItem(this.product);
@@ -37,16 +60,8 @@ class ProductItem extends StatelessWidget {
                 ),
               ),
               Align(
-                alignment: Alignment.bottomLeft,
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                    left: 25,
-                    bottom: 20,
-                  ),
-                  child: Text("₽" + product.price.toString(),
-                      style: productListPriceTextStyle),
-                ),
-              ),
+                  alignment: Alignment.bottomLeft,
+                  child: _displayPrice(product)),
             ],
           ),
         ),

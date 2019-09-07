@@ -48,9 +48,41 @@ final productListPriceTextStyle = TextStyle(
   fontStyle: FontStyle.normal,
 );
 
+final productListOldPriceTextStyle = TextStyle(
+    fontFamily: 'Roboto',
+    color: Color(0xffADBBC2),
+    fontSize: 18,
+    fontWeight: FontWeight.w700,
+    fontStyle: FontStyle.normal,
+    decoration: TextDecoration.lineThrough);
+
+final productListSalePriceTextStyle = TextStyle(
+  fontFamily: 'Roboto',
+  color: Color(0xffC91A1A),
+  fontSize: 18,
+  fontWeight: FontWeight.w700,
+  fontStyle: FontStyle.normal,
+);
+
 final productDetailsPriceTextStyle = TextStyle(
   fontFamily: 'Roboto',
   color: Color(0xff647a86),
+  fontSize: 32,
+  fontWeight: FontWeight.w700,
+  fontStyle: FontStyle.normal,
+);
+
+final productDetailsOldPriceTextStyle = TextStyle(
+    fontFamily: 'Roboto',
+    color: Color(0xffADBBC2),
+    fontSize: 32,
+    fontWeight: FontWeight.w700,
+    fontStyle: FontStyle.normal,
+    decoration: TextDecoration.lineThrough);
+
+final productDetailsSalePriceTextStyle = TextStyle(
+  fontFamily: 'Roboto',
+  color: Color(0xffC91A1A),
   fontSize: 32,
   fontWeight: FontWeight.w700,
   fontStyle: FontStyle.normal,

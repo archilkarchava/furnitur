@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 class AmountSelector extends StatelessWidget {
   @override
   Widget build(context) {
-    var _selector = Provider.of<AmountSelectorModel>(context);
+    final _amountSelector = Provider.of<AmountSelectorModel>(context);
     return Container(
       width: 70,
       height: 157,
@@ -30,17 +30,17 @@ class AmountSelector extends StatelessWidget {
             icon: Icon(Boxicons.bxPlus),
             color: Color(0xff647A86),
             iconSize: 30,
-            onPressed: () => _selector.increment(),
+            onPressed: () => _amountSelector.increment(),
           ),
           Text(
-            "${_selector.amount}",
+            "${_amountSelector.amount}",
             style: productDetailsPriceTextStyle,
           ),
           IconButton(
             icon: Icon(Boxicons.bxMinus),
             color: Color(0xff647A86),
             iconSize: 30,
-            onPressed: () => _selector.decrement(),
+            onPressed: () => _amountSelector.decrement(),
           ),
         ],
       ),

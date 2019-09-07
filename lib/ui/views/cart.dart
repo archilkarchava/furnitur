@@ -8,8 +8,8 @@ import 'package:provider/provider.dart';
 class CartView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var _inCart = Provider.of<CartModel>(context, listen: false);
-    var _items = _inCart.itemsUnique;
+    final _inCart = Provider.of<CartModel>(context, listen: false);
+    final _items = _inCart.itemsUnique;
     return Scaffold(
       backgroundColor: Color(0xffFFFFFF),
       appBar: appBar(

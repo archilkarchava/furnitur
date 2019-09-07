@@ -16,7 +16,6 @@ class FurniturApp extends StatelessWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    // var _products = Provider.of<ProductsModel>(context);
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<ProductsModel>(builder: (_) => ProductsModel()),

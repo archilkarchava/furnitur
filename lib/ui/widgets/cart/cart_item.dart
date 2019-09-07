@@ -9,7 +9,7 @@ class CartItem extends StatelessWidget {
   CartItem(this.item);
   @override
   Widget build(BuildContext context) {
-    var _cart = Provider.of<CartModel>(context);
+    final _cart = Provider.of<CartModel>(context);
     return Container(
       child: Row(
         children: <Widget>[
