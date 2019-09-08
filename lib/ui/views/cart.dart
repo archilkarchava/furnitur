@@ -38,18 +38,12 @@ class CartView extends StatelessWidget {
                       },
                     ),
                   ),
-                  Expanded(
-                    flex: 2,
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 15),
-                      child: Text("Сумма: ₽${_cart.totalPrice}",
-                          style: totalSumTextStyle),
-                    ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 15),
+                    child: Text("Сумма: ₽${_cart.totalPrice}",
+                        style: totalSumTextStyle),
                   ),
-                  Expanded(
-                    flex: 2,
-                    child: BuyButton(),
-                  ),
+                  BuyButton(),
                 ],
               )
             : Center(

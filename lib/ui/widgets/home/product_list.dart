@@ -7,14 +7,6 @@ class ProductList extends StatelessWidget {
   final String category;
   final String filter;
 
-  void _scrollProductsToBeginning() {
-    scrollController.animateTo(
-      0.0,
-      curve: Curves.easeOut,
-      duration: const Duration(milliseconds: 300),
-    );
-  }
-
   final ScrollController scrollController = ScrollController();
 
   ProductList(this.category, {this.filter = "Все"});
