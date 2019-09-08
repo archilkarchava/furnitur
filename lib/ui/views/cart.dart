@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:furnitur/core/models/cart.dart';
 import 'package:furnitur/ui/shared/text_styles.dart';
 import 'package:furnitur/ui/widgets/cart/buy_button.dart';
-import 'package:furnitur/ui/widgets/cart/cart_item.dart';
+import 'package:furnitur/ui/widgets/cart/cart_list_item.dart';
 import 'package:furnitur/ui/widgets/product_details/back_button.dart';
 import 'package:furnitur/ui/widgets/shared/appbar.dart';
 import 'package:provider/provider.dart';
@@ -34,7 +34,7 @@ class CartView extends StatelessWidget {
                       physics: BouncingScrollPhysics(),
                       itemBuilder: (context, index) {
                         final item = _items[index];
-                        return CartItem(item);
+                        return CartListItem(item);
                       },
                     ),
                   ),

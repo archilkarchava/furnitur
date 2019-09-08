@@ -53,10 +53,10 @@ class _SelectItemAmount extends StatelessWidget {
   }
 }
 
-class CartItem extends StatelessWidget {
+class CartListItem extends StatelessWidget {
   final Product item;
 
-  CartItem(this.item);
+  CartListItem(this.item);
   @override
   Widget build(BuildContext context) {
     final _cart = Provider.of<CartModel>(context);

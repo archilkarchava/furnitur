@@ -11,7 +11,7 @@ class AddInCartButton extends StatelessWidget {
   AddInCartButton(this.product);
   @override
   Widget build(BuildContext context) {
-    final _cart = Provider.of<CartModel>(context);
+    final _cart = Provider.of<CartModel>(context, listen: false);
     final _amountSelector = Provider.of<AmountSelectorModel>(context);
     final snackBar = SnackBar(
       content: Text(

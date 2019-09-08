@@ -9,7 +9,14 @@ class CartModel extends ChangeNotifier {
 
   List<Product> get items =>
       _inCart.map((product) => _products.getById(product.id)).toList();
-  List<Product> get itemsUnique => this.items.toSet().toList();
+  List<Product> get itemsUnique {
+    List<Product> _inCartUnique;
+    _inCartUnique = this._inCart;
+    _inCartUnique
+        .sort((product1, product2) => product1.price.compareTo(product2.price));
+    return _inCartUnique.toSet().toList();
+  }
+
   int get totalPrice =>
       items.fold(0, (total, current) => total + current.price);
   bool contains(Product product) => _inCart.contains(product);
