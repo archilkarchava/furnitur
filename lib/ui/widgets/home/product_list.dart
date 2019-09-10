@@ -5,7 +5,16 @@ import 'package:provider/provider.dart';
 
 class ProductList extends StatelessWidget {
   final String category;
-  final String filter;
+
+  Future<void> _scrollProductsToBeginning() async {
+    if (scrollController.hasClients) {
+      await scrollController.animateTo(
+        0.0,
+        curve: Curves.easeOut,
+        duration: const Duration(milliseconds: 300),
+      );
+    }
+  }
 
   final ScrollController scrollController = ScrollController();
 
@@ -13,9 +22,9 @@ class ProductList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _products = Provider.of<ProductsModel>(context);
-    // _products.addListener(() {
-    //   _scrollProductsToBeginning();
-    // });
+    _products.addListener(() async {
+      await _scrollProductsToBeginning();
+    });
     final _productsInCategory = _products.getProductsInCategory(category);
     return ListView.builder(
       scrollDirection: Axis.horizontal,
