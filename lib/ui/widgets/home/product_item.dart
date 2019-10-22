@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:furnitur/core/models/product.dart';
 import 'package:furnitur/ui/shared/text_styles.dart';
@@ -54,8 +55,8 @@ class ProductItem extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Padding(
                   padding: const EdgeInsets.all(15),
-                  child: Image.network(
-                    product.image,
+                  child: Image(
+                    image: CachedNetworkImageProvider(product.image),
                   ),
                 ),
               ),

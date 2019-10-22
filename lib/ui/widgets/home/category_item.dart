@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:furnitur/core/viewmodels/widgets/products.dart';
 import 'package:furnitur/ui/shared/text_styles.dart';
@@ -37,7 +38,7 @@ class CategoryItem extends StatelessWidget {
             ),
             child: Padding(
               padding: const EdgeInsets.all(7),
-              child: Image.network(image),
+              child: Image(image: CachedNetworkImageProvider(image)),
             ),
           ),
           Padding(
