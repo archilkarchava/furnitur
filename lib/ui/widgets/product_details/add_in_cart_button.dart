@@ -1,8 +1,8 @@
 import 'package:boxicons_flutter/boxicons_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:furnitur/core/models/amount_selector.dart';
-import 'package:furnitur/core/models/cart.dart';
-import 'package:furnitur/core/models/products.dart';
+import 'package:furnitur/core/models/product.dart';
+import 'package:furnitur/core/viewmodels/views/cart.dart';
+import 'package:furnitur/core/viewmodels/widgets/amount_selector.dart';
 import 'package:provider/provider.dart';
 
 class AddInCartButton extends StatelessWidget {
@@ -11,7 +11,7 @@ class AddInCartButton extends StatelessWidget {
   AddInCartButton(this.product);
   @override
   Widget build(BuildContext context) {
-    final _cart = Provider.of<CartModel>(context, listen: false);
+    final _cart = Provider.of<CartViewModel>(context, listen: false);
     final _amountSelector = Provider.of<AmountSelectorModel>(context);
     final snackBar = SnackBar(
       content: Text(

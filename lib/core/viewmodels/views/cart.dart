@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:furnitur/core/models/products.dart';
+import 'package:furnitur/core/models/product.dart';
+import 'package:furnitur/core/viewmodels/widgets/products.dart';
 
-class CartModel extends ChangeNotifier {
+class CartViewModel extends ChangeNotifier {
   final ProductsModel _products;
-  final CartModel previous;
+  final CartViewModel previous;
   final List<Product> _inCart;
-  CartModel(this._products, this.previous) : _inCart = previous?._inCart ?? [];
+  CartViewModel(this._products, this.previous)
+      : _inCart = previous?._inCart ?? [];
 
   List<Product> get items =>
       _inCart.map((product) => _products.getById(product.id)).toList();

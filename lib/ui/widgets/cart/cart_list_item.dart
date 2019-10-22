@@ -1,7 +1,7 @@
 import 'package:boxicons_flutter/boxicons_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:furnitur/core/models/cart.dart';
-import 'package:furnitur/core/models/products.dart';
+import 'package:furnitur/core/models/product.dart';
+import 'package:furnitur/core/viewmodels/views/cart.dart';
 import 'package:furnitur/ui/shared/text_styles.dart';
 import 'package:provider/provider.dart';
 
@@ -11,7 +11,7 @@ class _SelectItemAmount extends StatelessWidget {
   _SelectItemAmount(this.item);
   @override
   Widget build(BuildContext context) {
-    final _cart = Provider.of<CartModel>(context);
+    final _cart = Provider.of<CartViewModel>(context);
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: ConstrainedBox(
@@ -59,7 +59,7 @@ class CartListItem extends StatelessWidget {
   CartListItem(this.item);
   @override
   Widget build(BuildContext context) {
-    final _cart = Provider.of<CartModel>(context);
+    final _cart = Provider.of<CartViewModel>(context);
     return Padding(
       padding: const EdgeInsets.only(bottom: 20),
       child: Container(

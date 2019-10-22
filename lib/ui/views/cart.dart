@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:furnitur/core/models/cart.dart';
+import 'package:furnitur/core/viewmodels/views/cart.dart';
 import 'package:furnitur/ui/shared/text_styles.dart';
 import 'package:furnitur/ui/widgets/cart/buy_button.dart';
 import 'package:furnitur/ui/widgets/cart/cart_list_item.dart';
@@ -10,7 +10,7 @@ import 'package:provider/provider.dart';
 class CartView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final _cart = Provider.of<CartModel>(context);
+    final _cart = Provider.of<CartViewModel>(context);
     final _items = _cart.itemsUnique;
     return Scaffold(
       backgroundColor: Color(0xffFFFFFF),

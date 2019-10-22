@@ -1,4 +1,4 @@
-import 'package:furnitur/core/models/products.dart';
+import 'package:furnitur/core/models/product.dart';
 
 final products = [
   Product(

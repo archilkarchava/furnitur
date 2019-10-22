@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:furnitur/core/data/products.dart' as data;
-import 'package:meta/meta.dart';
+import 'package:furnitur/core/models/product.dart';
 
 class ProductsModel extends ChangeNotifier {
   static final _products = data.products;
@@ -40,29 +40,4 @@ class ProductsModel extends ChangeNotifier {
   }
 
   Product operator [](int i) => _products[i];
-}
-
-@immutable
-class Product {
-  final int id;
-  final String name;
-  final int price;
-  final int oldPrice;
-  final String image;
-  final String description;
-  final String category;
-  Product(
-      {@required this.id,
-      @required this.name,
-      @required this.price,
-      this.oldPrice,
-      @required this.image,
-      @required this.description,
-      @required this.category});
-
-  @override
-  int get hashCode => id;
-
-  @override
-  bool operator ==(Object other) => other is Product && other.id == id;
 }

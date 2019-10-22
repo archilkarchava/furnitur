@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:furnitur/core/models/products.dart';
+import 'package:furnitur/core/models/product.dart';
 import 'package:furnitur/ui/shared/text_styles.dart';
 import 'package:furnitur/ui/views/product_details.dart';
 
