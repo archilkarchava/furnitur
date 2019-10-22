@@ -9,18 +9,18 @@ class CartViewModel extends ChangeNotifier {
   CartViewModel(this._products, this.previous)
       : _inCart = previous?._inCart ?? [];
 
-  List<Product> get items =>
-      _inCart.map((product) => _products.getById(product.id)).toList();
-  List<Product> get itemsUnique {
+  Future<List<Product>> get items async =>
+      Future.wait(_inCart.map((product) => _products.getById(product.id)));
+  Future<List<Product>> get itemsUnique async {
     List<Product> _inCartUnique;
-    _inCartUnique = this._inCart;
+    _inCartUnique = await items;
     _inCartUnique
         .sort((product1, product2) => product1.price.compareTo(product2.price));
     return _inCartUnique.toSet().toList();
   }
 
-  int get totalPrice =>
-      items.fold(0, (total, current) => total + current.price);
+  Future<int> get totalPrice async =>
+      (await items).fold<int>(0, (total, current) => total + current.price);
   bool contains(Product product) => _inCart.contains(product);
 
   int getAmountOf(Product product) {

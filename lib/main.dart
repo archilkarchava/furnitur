@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:furnitur/core/routes.dart';
+import 'package:furnitur/core/services/db.dart';
 import 'package:furnitur/core/viewmodels/views/cart.dart';
 import 'package:furnitur/core/viewmodels/widgets/products.dart';
 import 'package:furnitur/ui/views/cart.dart';
@@ -18,10 +19,15 @@ class FurniturApp extends StatelessWidget {
     ]);
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider<ProductsModel>(builder: (_) => ProductsModel()),
+        // Provider.value(value: DatabaseService),
+        Provider<DatabaseService>(
+          builder: (context) => DatabaseService(),
+        ),
+        ChangeNotifierProxyProvider<DatabaseService, ProductsModel>(
+            builder: (context, db, products) => ProductsModel(db: db)),
         ChangeNotifierProxyProvider<ProductsModel, CartViewModel>(
-          initialBuilder: (_) => CartViewModel(null, null),
-          builder: (_, products, previousCart) =>
+          // initialBuilder: (_) => CartViewModel(null, null),
+          builder: (context, products, previousCart) =>
               CartViewModel(products, previousCart),
         )
       ],

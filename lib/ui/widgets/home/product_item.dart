@@ -54,7 +54,7 @@ class ProductItem extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Padding(
                   padding: const EdgeInsets.all(15),
-                  child: Image.asset(
+                  child: Image.network(
                     product.image,
                   ),
                 ),

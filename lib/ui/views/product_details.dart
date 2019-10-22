@@ -61,7 +61,7 @@ class ProductDetailsView extends StatelessWidget {
                 child: Center(
                   child: Padding(
                     padding: const EdgeInsets.all(8),
-                    child: Image.asset(
+                    child: Image.network(
                       product.image,
                     ),
                   ),

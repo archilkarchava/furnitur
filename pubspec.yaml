@@ -14,7 +14,7 @@ description: A new Flutter project.
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.2.2 <3.0.0"
 
 dependencies:
   flutter:
@@ -42,25 +42,25 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  assets:
-   - assets/images/image_01.png
-   - assets/images/image_02.png
-   - assets/images/image_03.png
-   - assets/images/image_04.png
-   - assets/images/image_05.png
-   - assets/images/image_06.png
-   - assets/images/image_07.png
-   - assets/images/image_08.png
-   - assets/images/image_09.png
-   - assets/images/image_10.png
-   - assets/images/image_11.png
-   - assets/images/image_12.png
-   - assets/images/image_13.png
-   - assets/images/image_14.png
-   - assets/images/image_15.png
-   - assets/images/image_16.png
-   - assets/images/image_17.png
-   - assets/images/image_18.png
+  # assets:
+  #  - assets/images/image_01.png
+  #  - assets/images/image_02.png
+  #  - assets/images/image_03.png
+  #  - assets/images/image_04.png
+  #  - assets/images/image_05.png
+  #  - assets/images/image_06.png
+  #  - assets/images/image_07.png
+  #  - assets/images/image_08.png
+  #  - assets/images/image_09.png
+  #  - assets/images/image_10.png
+  #  - assets/images/image_11.png
+  #  - assets/images/image_12.png
+  #  - assets/images/image_13.png
+  #  - assets/images/image_14.png
+  #  - assets/images/image_15.png
+  #  - assets/images/image_16.png
+  #  - assets/images/image_17.png
+  #  - assets/images/image_18.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

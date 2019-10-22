@@ -1,32 +1,39 @@
 import 'package:flutter/material.dart';
-import 'package:furnitur/core/data/products.dart' as data;
 import 'package:furnitur/core/models/product.dart';
+import 'package:furnitur/core/services/db.dart';
 
 class ProductsModel extends ChangeNotifier {
-  static final _products = data.products;
+  DatabaseService _db;
+  ProductsModel({@required DatabaseService db}) : _db = db;
+  List<Product> _products;
   String _activeCategory = "Стул";
   bool _onlyShowOnSale = false;
 
-  Product getById(int id) =>
-      _products.singleWhere((product) => product.id == id, orElse: () => null);
+  Future<Product> getById(String id) async {
+    // final product = (await this.products).singleWhere((product) => product.id == id, orElse: () => null);
+    return _db.getProduct(id);
+  }
 
-  List<Product> getProductsInCategory(String category) {
+  Future<List<Product>> getProductsInCategory(String category) async {
     if (_onlyShowOnSale) {
-      return this
-          .itemsOnSale
+      return (await this.productsOnSale)
           .where((product) => product.category == category)
           .toList();
     } else {
-      return this
-          .items
+      return (await this.products)
           .where((product) => product.category == category)
           .toList();
     }
   }
 
-  List<Product> get items => _products;
-  List<Product> get itemsOnSale =>
-      _products.where((product) => product.oldPrice != null).toList();
+  Future<List<Product>> get products async {
+    _products = await _db.products;
+    return _products;
+  }
+
+  Future<List<Product>> get productsOnSale async => (await this.products)
+      .where((product) => product.oldPrice != null)
+      .toList();
   String get activeCategory => _activeCategory;
   bool get onlyShowOnSale => _onlyShowOnSale;
   void setActiveCategory(String category) {
@@ -38,6 +45,4 @@ class ProductsModel extends ChangeNotifier {
     _onlyShowOnSale = onlyShowOnSale;
     notifyListeners();
   }
-
-  Product operator [](int i) => _products[i];
 }

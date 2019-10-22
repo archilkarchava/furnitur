@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:furnitur/core/models/product.dart';
 import 'package:furnitur/core/viewmodels/views/cart.dart';
 import 'package:furnitur/ui/shared/text_styles.dart';
 import 'package:furnitur/ui/widgets/cart/buy_button.dart';
@@ -20,36 +21,42 @@ class CartView extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-        child: _cart.items.length > 0
-            ? Flex(
-                direction: Axis.vertical,
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Expanded(
-                    flex: 14,
-                    child: ListView.builder(
-                      itemCount: _items.length,
-                      physics: BouncingScrollPhysics(),
-                      itemBuilder: (context, index) {
-                        final item = _items[index];
-                        return CartListItem(item);
-                      },
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 15),
-                    child: Text("Сумма: ₽${_cart.totalPrice}",
-                        style: totalSumTextStyle),
-                  ),
-                  BuyButton(),
-                ],
-              )
-            : Center(
-                child: Text("В корзине пока нет товаров.",
-                    style: totalSumTextStyle),
-              ),
+        child: FutureBuilder(
+            future: _items,
+            initialData: List<Product>(),
+            builder: (context, snapshot) {
+              final List<Product> uniqueItems = snapshot.data;
+              return uniqueItems.length > 0
+                  ? Flex(
+                      direction: Axis.vertical,
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Expanded(
+                          flex: 14,
+                          child: ListView.builder(
+                            itemCount: uniqueItems.length,
+                            physics: BouncingScrollPhysics(),
+                            itemBuilder: (context, index) {
+                              final item = uniqueItems[index];
+                              return CartListItem(item);
+                            },
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 15),
+                          child: Text("Сумма: ₽${_cart.totalPrice}",
+                              style: totalSumTextStyle),
+                        ),
+                        BuyButton(),
+                      ],
+                    )
+                  : Center(
+                      child: Text("В корзине пока нет товаров.",
+                          style: totalSumTextStyle),
+                    );
+            }),
       ),
     );
   }

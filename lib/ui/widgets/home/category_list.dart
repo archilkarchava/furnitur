@@ -16,7 +16,8 @@ class CategoryList extends StatelessWidget {
             child: CategoryItem(
               displayName: "Стулья",
               category: "Стул",
-              imageAsset: "assets/images/image_05.png",
+              image:
+                  "https://firebasestorage.googleapis.com/v0/b/furnitur-534fc.appspot.com/o/image_05.png?alt=media&token=6302579d-aca8-4985-b4b9-82005b9c7ed8",
             ),
           ),
           Padding(
@@ -26,7 +27,8 @@ class CategoryList extends StatelessWidget {
             child: CategoryItem(
               displayName: "Столы",
               category: "Стол",
-              imageAsset: "assets/images/image_07.png",
+              image:
+                  "https://firebasestorage.googleapis.com/v0/b/furnitur-534fc.appspot.com/o/image_07.png?alt=media&token=8b2edd1d-a406-40a3-973b-4ee6d3e8ad41",
             ),
           ),
           Padding(
@@ -36,7 +38,8 @@ class CategoryList extends StatelessWidget {
             child: CategoryItem(
               displayName: "Кровати",
               category: "Кровать",
-              imageAsset: "assets/images/image_11.png",
+              image:
+                  "https://firebasestorage.googleapis.com/v0/b/furnitur-534fc.appspot.com/o/image_11.png?alt=media&token=71cd40c9-b595-4dd3-ad1f-36de93cb3821",
             ),
           ),
           Padding(
@@ -46,7 +49,8 @@ class CategoryList extends StatelessWidget {
             child: CategoryItem(
               displayName: "Лампы",
               category: "Лампа",
-              imageAsset: "assets/images/image_15.png",
+              image:
+                  "https://firebasestorage.googleapis.com/v0/b/furnitur-534fc.appspot.com/o/image_15.png?alt=media&token=3b620d0f-67cb-43cd-9a34-f52c47d036d8",
             ),
           ),
         ],

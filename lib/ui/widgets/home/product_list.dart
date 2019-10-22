@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:furnitur/core/models/product.dart';
 import 'package:furnitur/core/viewmodels/widgets/products.dart';
 import 'package:furnitur/ui/widgets/home/product_item.dart';
 import 'package:provider/provider.dart';
@@ -25,15 +26,20 @@ class ProductList extends StatelessWidget {
     _products.addListener(() async {
       await _scrollProductsToBeginning();
     });
-    final _productsInCategory = _products.getProductsInCategory(category);
-    return ListView.builder(
-      scrollDirection: Axis.horizontal,
-      physics: BouncingScrollPhysics(),
-      controller: scrollController,
-      itemCount: _productsInCategory.length,
-      itemBuilder: (context, index) {
-        final product = _productsInCategory[index];
-        return ProductItem(product);
+    return FutureBuilder(
+      future: _products.getProductsInCategory(category),
+      builder: (context, snapshot) {
+        final List<Product> productsInCategory = snapshot.data;
+        return ListView.builder(
+          scrollDirection: Axis.horizontal,
+          physics: BouncingScrollPhysics(),
+          controller: scrollController,
+          itemCount: productsInCategory.length,
+          itemBuilder: (context, index) {
+            final product = productsInCategory[index];
+            return ProductItem(product);
+          },
+        );
       },
     );
   }

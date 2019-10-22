@@ -8,12 +8,12 @@ class CategoryItem extends StatelessWidget {
 
   final String displayName;
 
-  final String imageAsset;
+  final String image;
 
   CategoryItem(
       {@required this.category,
       @required this.displayName,
-      @required this.imageAsset});
+      @required this.image});
   @override
   Widget build(BuildContext context) {
     final products = Provider.of<ProductsModel>(context);
@@ -37,7 +37,7 @@ class CategoryItem extends StatelessWidget {
             ),
             child: Padding(
               padding: const EdgeInsets.all(7),
-              child: Image.asset(imageAsset),
+              child: Image.network(image),
             ),
           ),
           Padding(
