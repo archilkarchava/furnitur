@@ -17,11 +17,11 @@ class ProductsModel extends ChangeNotifier {
 
   Future<List<Product>> getProductsInCategory(String category) async {
     if (_onlyShowOnSale) {
-      return (await this.productsOnSale)
+      return (await productsOnSale)
           .where((product) => product.category == category)
           .toList();
     } else {
-      return (await this.products)
+      return (await products)
           .where((product) => product.category == category)
           .toList();
     }
@@ -32,9 +32,8 @@ class ProductsModel extends ChangeNotifier {
     return _products;
   }
 
-  Future<List<Product>> get productsOnSale async => (await this.products)
-      .where((product) => product.oldPrice != null)
-      .toList();
+  Future<List<Product>> get productsOnSale async =>
+      (await products).where((product) => product.oldPrice != null).toList();
   String get activeCategory => _activeCategory;
   bool get onlyShowOnSale => _onlyShowOnSale;
   void setActiveCategory(String category) {
