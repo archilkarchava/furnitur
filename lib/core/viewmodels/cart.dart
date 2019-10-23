@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:furnitur/core/models/product.dart';
-import 'package:furnitur/core/viewmodels/widgets/products.dart';
+import 'package:furnitur/core/viewmodels/products.dart';
 
 class CartViewModel extends ChangeNotifier {
   final ProductsModel _products;
@@ -9,12 +9,12 @@ class CartViewModel extends ChangeNotifier {
   CartViewModel(this._products, this.previous)
       : _inCart = previous?._inCart ?? [];
 
-  Future<List<Product>> get items async =>
-      Future.wait(_inCart.map((product) => _products.getById(product.id)));
-  Future<List<Product>> get itemsUnique async {
+  List<Product> get items =>
+      _inCart.map((product) => _products.getById(product.id)).toList();
+  List<Product> get itemsUnique {
     List<Product> _inCartUnique;
-    _inCartUnique = await items;
-    if (_inCartUnique.length > 0) {
+    _inCartUnique = items;
+    if (_inCartUnique.length > 1) {
       _inCartUnique.sort(
           (product1, product2) => product1.price.compareTo(product2.price));
       return _inCartUnique.toSet().toList();
@@ -22,8 +22,8 @@ class CartViewModel extends ChangeNotifier {
     return _inCartUnique;
   }
 
-  Future<int> get totalPrice async =>
-      (await items).fold<int>(0, (total, current) => total + current.price);
+  int get totalPrice =>
+      items.fold<int>(0, (total, current) => total + current.price);
   bool contains(Product product) => _inCart.contains(product);
 
   int getAmountOf(Product product) {

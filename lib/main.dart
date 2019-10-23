@@ -1,11 +1,10 @@
-// TODO: fix the getter length was called on null, when starting the app
 // TODO: Possibly tweak cached network images
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:furnitur/core/routes.dart';
-import 'package:furnitur/core/services/db.dart';
-import 'package:furnitur/core/viewmodels/views/cart.dart';
-import 'package:furnitur/core/viewmodels/widgets/products.dart';
+import 'package:furnitur/core/services/api.dart';
+import 'package:furnitur/core/viewmodels/cart.dart';
+import 'package:furnitur/core/viewmodels/products.dart';
 import 'package:furnitur/ui/views/cart.dart';
 import 'package:furnitur/ui/views/home.dart';
 import 'package:provider/provider.dart';
@@ -21,12 +20,11 @@ class FurniturApp extends StatelessWidget {
     ]);
     return MultiProvider(
       providers: [
-        // Provider.value(value: DatabaseService),
-        Provider<DatabaseService>(
-          builder: (context) => DatabaseService(),
+        Provider<Api>(
+          builder: (context) => Api(),
         ),
-        ChangeNotifierProxyProvider<DatabaseService, ProductsModel>(
-            builder: (context, db, products) => ProductsModel(db: db)),
+        ChangeNotifierProxyProvider<Api, ProductsModel>(
+            builder: (context, api, products) => ProductsModel(api: api)),
         ChangeNotifierProxyProvider<ProductsModel, CartViewModel>(
           // initialBuilder: (_) => CartViewModel(null, null),
           builder: (context, products, previousCart) =>

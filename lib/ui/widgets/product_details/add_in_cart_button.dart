@@ -1,8 +1,8 @@
 import 'package:boxicons_flutter/boxicons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:furnitur/core/models/product.dart';
-import 'package:furnitur/core/viewmodels/views/cart.dart';
-import 'package:furnitur/core/viewmodels/widgets/amount_selector.dart';
+import 'package:furnitur/core/viewmodels/amount_selector.dart';
+import 'package:furnitur/core/viewmodels/cart.dart';
 import 'package:provider/provider.dart';
 
 class AddInCartButton extends StatelessWidget {

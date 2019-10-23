@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:furnitur/core/models/product.dart';
-import 'package:furnitur/core/viewmodels/widgets/amount_selector.dart';
+import 'package:furnitur/core/viewmodels/amount_selector.dart';
 import 'package:furnitur/ui/shared/text_styles.dart';
 import 'package:furnitur/ui/widgets/home/cart_button.dart';
 import 'package:furnitur/ui/widgets/product_details/add_in_cart_button.dart';

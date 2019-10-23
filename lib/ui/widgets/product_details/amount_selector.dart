@@ -1,6 +1,6 @@
 import 'package:boxicons_flutter/boxicons_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:furnitur/core/viewmodels/widgets/amount_selector.dart';
+import 'package:furnitur/core/viewmodels/amount_selector.dart';
 import 'package:furnitur/ui/shared/text_styles.dart';
 import 'package:provider/provider.dart';
 

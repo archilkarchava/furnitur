@@ -2,7 +2,7 @@ import 'package:boxicons_flutter/boxicons_flutter.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:furnitur/core/models/product.dart';
-import 'package:furnitur/core/viewmodels/views/cart.dart';
+import 'package:furnitur/core/viewmodels/cart.dart';
 import 'package:furnitur/ui/shared/text_styles.dart';
 import 'package:provider/provider.dart';
 
