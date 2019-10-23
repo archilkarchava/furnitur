@@ -14,9 +14,12 @@ class CartViewModel extends ChangeNotifier {
   Future<List<Product>> get itemsUnique async {
     List<Product> _inCartUnique;
     _inCartUnique = await items;
-    _inCartUnique
-        .sort((product1, product2) => product1.price.compareTo(product2.price));
-    return _inCartUnique.toSet().toList();
+    if (_inCartUnique.length > 0) {
+      _inCartUnique.sort(
+          (product1, product2) => product1.price.compareTo(product2.price));
+      return _inCartUnique.toSet().toList();
+    }
+    return _inCartUnique;
   }
 
   Future<int> get totalPrice async =>

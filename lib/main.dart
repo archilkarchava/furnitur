@@ -1,5 +1,4 @@
 // TODO: fix the getter length was called on null, when starting the app
-// TODO: fix cart
 // TODO: Possibly tweak cached network images
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

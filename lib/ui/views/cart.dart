@@ -12,7 +12,6 @@ class CartView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _cart = Provider.of<CartViewModel>(context);
-    final _items = _cart.itemsUnique;
     return Scaffold(
       backgroundColor: Color(0xffFFFFFF),
       appBar: appBar(
@@ -22,7 +21,7 @@ class CartView extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
         child: FutureBuilder(
-            future: _items,
+            future: _cart.itemsUnique,
             initialData: List<Product>(),
             builder: (context, snapshot) {
               final List<Product> uniqueItems = snapshot.data;
@@ -45,10 +44,14 @@ class CartView extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 15),
-                          child: Text("Сумма: ₽${_cart.totalPrice}",
-                              style: totalSumTextStyle),
-                        ),
+                            padding: const EdgeInsets.symmetric(vertical: 15),
+                            child: FutureBuilder(
+                              future: _cart.totalPrice,
+                              builder: (context, snapshot) {
+                                return Text("Сумма: ₽${snapshot.data}",
+                                    style: totalSumTextStyle);
+                              },
+                            )),
                         BuyButton(),
                       ],
                     )

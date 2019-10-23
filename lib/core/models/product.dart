@@ -19,11 +19,11 @@ class Product {
       @required this.description,
       @required this.category});
 
-  // @override
-  // int get hashCode => id.hashCode;
+  @override
+  int get hashCode => id.hashCode;
 
-  // @override
-  // bool operator ==(Object other) => other is Product && other.id == id;
+  @override
+  bool operator ==(Object other) => other is Product && other.id == id;
   factory Product.fromMap(Map<String, dynamic> data) {
     data = data ?? {};
     return Product(

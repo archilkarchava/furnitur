@@ -10,8 +10,9 @@ class ProductsModel extends ChangeNotifier {
   bool _onlyShowOnSale = false;
 
   Future<Product> getById(String id) async {
-    // final product = (await this.products).singleWhere((product) => product.id == id, orElse: () => null);
-    return _db.getProduct(id);
+    final product = (await products)
+        .singleWhere((product) => product.id == id, orElse: () => null);
+    return product;
   }
 
   Future<List<Product>> getProductsInCategory(String category) async {
