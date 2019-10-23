@@ -28,6 +28,7 @@ class ProductList extends StatelessWidget {
     });
     return FutureBuilder(
       future: _products.getProductsInCategory(category),
+      initialData: List<Product>(),
       builder: (context, snapshot) {
         final List<Product> productsInCategory = snapshot.data;
         return ListView.builder(
