@@ -26,8 +26,11 @@ class ProductsModel extends ChangeNotifier {
     return product;
   }
 
-  List<ProductCategory> getCategories() =>
-      _products.map((product) => product.category).toSet().toList();
+  List<ProductCategory> getCategories() {
+    final _categories =
+        _products.map((product) => product.category).toSet().toList();
+    return _categories;
+  }
 
   List<Product> getProductsInCategory(ProductCategory category) {
     if (_onlyShowOnSale) {

@@ -15,7 +15,7 @@ class AddInCartButton extends StatelessWidget {
     final _amountSelector = Provider.of<AmountSelectorModel>(context);
     final snackBar = SnackBar(
       content: Text(
-          'Вы успешно добавили ${product.category} ${product.name} в колличестве ${_amountSelector.amount} шт. в корзину.'),
+          'Вы успешно добавили ${product.category.name} ${product.name} в колличестве ${_amountSelector.amount} шт. в корзину.'),
       action: SnackBarAction(
         label: 'ОК',
         onPressed: () {},

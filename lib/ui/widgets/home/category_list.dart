@@ -7,26 +7,16 @@ class CategoryList extends StatelessWidget {
   @override
   Widget build(context) {
     final _products = Provider.of<ProductsModel>(context);
-    return FutureBuilder(
-      future: _products.init(),
-      builder: (context, snapshot) {
-        if (_products.items == null || _products.items.length == 0) {
-          return Center(
-            child: CircularProgressIndicator(),
-          );
-        }
-        final _categoryNames = _products.getCategories();
-        return ListView.builder(
-          scrollDirection: Axis.horizontal,
-          physics: BouncingScrollPhysics(),
-          itemCount: _categoryNames.length,
-          itemBuilder: (context, index) {
-            final category = _categoryNames[index];
-            return Padding(
-              padding: const EdgeInsets.only(right: 20.0),
-              child: CategoryItem(category),
-            );
-          },
+    final _categoryNames = _products.getCategories();
+    return ListView.builder(
+      scrollDirection: Axis.horizontal,
+      physics: BouncingScrollPhysics(),
+      itemCount: _categoryNames.length,
+      itemBuilder: (context, index) {
+        final category = _categoryNames[index];
+        return Padding(
+          padding: const EdgeInsets.only(right: 20.0),
+          child: CategoryItem(category),
         );
       },
     );

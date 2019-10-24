@@ -14,53 +14,62 @@ class HomeView extends StatelessWidget {
     final _products = Provider.of<ProductsModel>(context);
     return FutureBuilder(
       future: _products.init(),
-      builder: (context, snapshot) => Scaffold(
-        backgroundColor: Color(0xffFFFFFF),
-        appBar: appBar(rightButton: CartButton(context)),
-        body: Padding(
-          padding: const EdgeInsets.only(
-            left: 30,
-            right: 30,
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              FilterList(),
-              SizedBox(
-                height: 15,
-              ),
-              Expanded(
-                child: ProductList(
-                  _products.activeCategory,
-                ),
-              ),
-            ],
-          ),
-        ),
-        bottomNavigationBar: Padding(
-          padding:
-              const EdgeInsets.only(top: 25, bottom: 15, left: 30, right: 30),
-          child: SizedBox(
-            height: 120,
+      builder: (context, _) {
+        if (_products.items == null || _products.items.length == 0) {
+          return Scaffold(
+            body: Center(
+              child: CircularProgressIndicator(),
+            ),
+          );
+        }
+        return Scaffold(
+          backgroundColor: Color(0xffFFFFFF),
+          appBar: appBar(rightButton: CartButton(context)),
+          body: Padding(
+            padding: const EdgeInsets.only(
+              left: 30,
+              right: 30,
+            ),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 25),
-                  child: Text(
-                    "Категории",
-                    style: headingTextStyle,
+                FilterList(),
+                SizedBox(
+                  height: 15,
+                ),
+                Expanded(
+                  child: ProductList(
+                    _products.activeCategory,
                   ),
                 ),
-                Expanded(child: CategoryList())
               ],
             ),
           ),
-        ),
-      ),
+          bottomNavigationBar: Padding(
+            padding:
+                const EdgeInsets.only(top: 25, bottom: 15, left: 30, right: 30),
+            child: SizedBox(
+              height: 152,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 25),
+                    child: Text(
+                      "Категории",
+                      style: headingTextStyle,
+                    ),
+                  ),
+                  Expanded(child: CategoryList())
+                ],
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }

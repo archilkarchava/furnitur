@@ -84,7 +84,7 @@ class ProductDetailsView extends StatelessWidget {
                         mainAxisSize: MainAxisSize.max,
                         children: <Widget>[
                           Text(
-                            "${product.category}\n${product.name}",
+                            "${product.category.name}\n${product.name}",
                             style: productDetailsNameTextStyle,
                           ),
                           SizedBox(height: 29),

@@ -27,25 +27,16 @@ class ProductList extends StatelessWidget {
     _products.addListener(() async {
       await _scrollProductsToBeginning();
     });
-    return FutureBuilder(
-      future: _products.init(),
-      builder: (context, snapshot) {
-        if (_products.items == null || _products.items.length == 0) {
-          return Center(
-            child: CircularProgressIndicator(),
-          );
-        }
-        final List<Product> _productsInCategory =
-            _products.getProductsInCategory(this.category);
-        return ListView.builder(
-            scrollDirection: Axis.horizontal,
-            physics: BouncingScrollPhysics(),
-            controller: scrollController,
-            itemCount: _productsInCategory.length,
-            itemBuilder: (context, index) {
-              final product = _productsInCategory[index];
-              return ProductItem(product);
-            });
+    final List<Product> _productsInCategory =
+        _products.getProductsInCategory(this.category);
+    return ListView.builder(
+      scrollDirection: Axis.horizontal,
+      physics: BouncingScrollPhysics(),
+      controller: scrollController,
+      itemCount: _productsInCategory.length,
+      itemBuilder: (context, index) {
+        final product = _productsInCategory[index];
+        return ProductItem(product);
       },
     );
   }

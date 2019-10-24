@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:furnitur/core/models/product.dart';
+import 'package:furnitur/core/models/productCategory.dart';
 
 class Api {
   static final _db = Firestore.instance;
@@ -11,17 +12,19 @@ class Api {
   }
 
   Future<List<Product>> fetchProducts() async {
-    return (await _ref.getDocuments()).documents.map(
-      (doc) {
-        // final category = ProductCategory.fromMap(doc.data['category']);
+    return Future.wait((await _ref.getDocuments()).documents.map(
+      (doc) async {
+        final ProductCategory category =
+            ProductCategory.fromMap((await doc.data['category'].get()).data);
+
         final productMap = {
           'id': doc.documentID,
           ...doc.data,
-          // 'category': category
+          'category': category
         };
         return Product.fromMap(productMap);
       },
-    ).toList();
+    ).toList());
   }
 
   // Future<List<String>> fetchCategoryNames() async {

@@ -85,7 +85,7 @@ class CartListItem extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text("${item.category} ${item.name}",
+                  Text("${item.category.name} ${item.name}",
                       style: cartItemNameTextStyle),
                   Text("₽${item.price * _cart.getAmountOf(item)}",
                       style: cartItemPriceTextStyle),
