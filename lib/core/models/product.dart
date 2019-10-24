@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:furnitur/core/models/productCategory.dart';
 import 'package:meta/meta.dart';
 
 @immutable
@@ -9,14 +9,14 @@ class Product {
   final int oldPrice;
   final String image;
   final String description;
-  final String category;
+  final ProductCategory category;
   Product(
       {@required this.id,
       @required this.name,
       @required this.price,
       this.oldPrice,
-      @required this.image,
-      @required this.description,
+      this.image,
+      this.description,
       @required this.category});
 
   @override
@@ -27,8 +27,8 @@ class Product {
   factory Product.fromMap(Map<String, dynamic> data) {
     data = data ?? {};
     return Product(
-      id: data['id'] ?? '',
-      name: data['name'] ?? '',
+      id: data['id'],
+      name: data['name'],
       price: data['price'],
       oldPrice: data['oldPrice'],
       image: data['image'] ?? '',
