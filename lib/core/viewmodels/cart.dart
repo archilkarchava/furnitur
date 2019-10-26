@@ -22,8 +22,8 @@ class CartViewModel extends ChangeNotifier {
     return _inCartUnique;
   }
 
-  int get totalPrice =>
-      items.fold<int>(0, (total, current) => total + current.price);
+  double get totalPrice =>
+      items.fold<double>(0, (total, current) => total + current.price);
   bool contains(Product product) => _inCart.contains(product);
 
   int getAmountOf(Product product) {

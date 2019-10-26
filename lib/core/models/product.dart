@@ -36,4 +36,13 @@ class Product {
       category: data['category'],
     );
   }
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'name': name,
+        'price': price,
+        'oldPrice': oldPrice,
+        'image': image ?? '',
+        'description': description ?? '',
+        'category': category.toJson(),
+      };
 }

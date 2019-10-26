@@ -21,4 +21,6 @@ class ProductCategory {
       image: data['image'] ?? '',
     );
   }
+  Map<String, dynamic> toJson() =>
+      {'name': name, 'namePlural': namePlural, 'image': image};
 }
