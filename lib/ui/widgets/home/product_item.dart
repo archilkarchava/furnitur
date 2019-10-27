@@ -10,6 +10,7 @@ Widget _displayPrice(Product product) {
       padding: const EdgeInsets.only(left: 25, right: 25, bottom: 25),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text("₽${product.oldPrice}", style: productListOldPriceTextStyle),
           SizedBox(
