@@ -29,8 +29,8 @@ class Product {
     return Product(
       id: data['id'],
       name: data['name'],
-      price: data['price'],
-      oldPrice: data['oldPrice'],
+      price: data['price'] != null ? data['price'].round() : null,
+      oldPrice: data['oldPrice'] != null ? data['oldPrice'].round() : null,
       image: data['image'] ?? '',
       description: data['description'] ?? '',
       category: data['category'],

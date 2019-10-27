@@ -44,8 +44,10 @@ class ProductsModel extends ChangeNotifier {
     }
   }
 
-  List<Product> get productsOnSale =>
-      _products.where((product) => product.oldPrice != null).toList();
+  List<Product> get productsOnSale => _products
+      .where((product) =>
+          product.oldPrice != null && product.oldPrice > product.price)
+      .toList();
   ProductCategory get activeCategory => _activeCategory;
   bool get onlyShowOnSale => _onlyShowOnSale;
   void setActiveCategory(ProductCategory category) {
