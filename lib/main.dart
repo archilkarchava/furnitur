@@ -34,6 +34,7 @@ class FurniturApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Furnitur',
         home: HomeView(),
+        // theme: ThemeData(accentColor: Color(0xffe7f1f2)),
         routes: {
           Routes.Cart: (context) => CartView(),
         },

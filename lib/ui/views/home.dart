@@ -18,7 +18,8 @@ class HomeView extends StatelessWidget {
         if (_products.items == null || _products.items.length == 0) {
           return Scaffold(
             body: Center(
-              child: CircularProgressIndicator(),
+              child: CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(Color(0xffffe24a))),
             ),
           );
         }
