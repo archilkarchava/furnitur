@@ -122,7 +122,7 @@ final cartItemPriceTextStyle = TextStyle(
 final buyButtonTextStyle = TextStyle(
   fontFamily: 'Roboto',
   color: Color(0xff647a86),
-  fontSize: 30,
+  fontSize: 24,
   fontWeight: FontWeight.w700,
   fontStyle: FontStyle.normal,
 );
