@@ -8,7 +8,7 @@ class ClearCartButton extends StatelessWidget {
     final _cart = Provider.of<CartViewModel>(context);
     return FlatButton(
       child: Text(
-        'Очистить корзину',
+        'Очистить',
         style: clearCartButtonTextStyle,
       ),
       onPressed: () => _cart.clear(),

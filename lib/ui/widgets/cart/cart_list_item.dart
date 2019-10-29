@@ -38,9 +38,12 @@ class CartListItem extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text("${item.category.name} ${item.name}",
+                  Text('${item.category.name} ${item.name}',
                       style: cartItemNameTextStyle),
-                  Text("₽${item.price.round()} * ${_cart.getAmountOf(item)}",
+                  Text(
+                      _cart.getAmountOf(item) > 1
+                          ? '₽${item.price.round()} * ${_cart.getAmountOf(item)} шт.'
+                          : '₽${item.price.round()}',
                       style: cartItemPriceTextStyle),
                 ],
               ),
@@ -54,7 +57,7 @@ class CartListItem extends StatelessWidget {
                   IconButton(
                     icon: Icon(Boxicons.bxX),
                     color: Color(0xff647a86),
-                    tooltip: "Убрать из корзины",
+                    tooltip: 'Убрать из корзины',
                     onPressed: () =>
                         _cart.remove(item, amount: _cart.getAmountOf(item)),
                   ),
