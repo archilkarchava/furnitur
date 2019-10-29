@@ -44,6 +44,11 @@ class CartViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
+  void clear() {
+    _inCart.clear();
+    notifyListeners();
+  }
+
   void toggleInCart(Product product) {
     if (_inCart.contains(product)) {
       this.remove(product);

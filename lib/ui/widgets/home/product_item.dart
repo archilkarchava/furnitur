@@ -12,18 +12,21 @@ Widget _displayPrice(Product product) {
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text("₽${product.oldPrice}", style: productListOldPriceTextStyle),
+          Text("₽${product.oldPrice.round()}",
+              style: productListOldPriceTextStyle),
           SizedBox(
             height: 5,
           ),
-          Text("₽${product.price}", style: productListSalePriceTextStyle),
+          Text("₽${product.price.round()}",
+              style: productListSalePriceTextStyle),
         ],
       ),
     );
   } else {
     return Padding(
       padding: const EdgeInsets.only(left: 25, right: 25, bottom: 25),
-      child: Text("₽${product.price}", style: productListPriceTextStyle),
+      child:
+          Text("₽${product.price.round()}", style: productListPriceTextStyle),
     );
   }
 }

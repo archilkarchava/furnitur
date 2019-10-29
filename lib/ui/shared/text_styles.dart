@@ -134,3 +134,9 @@ final totalSumTextStyle = TextStyle(
   fontWeight: FontWeight.w700,
   fontStyle: FontStyle.normal,
 );
+
+final clearCartButtonTextStyle = TextStyle(
+  fontFamily: 'Roboto',
+  color: Color(0xff647A86),
+  fontStyle: FontStyle.normal,
+);

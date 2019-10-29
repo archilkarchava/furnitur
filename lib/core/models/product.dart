@@ -5,8 +5,8 @@ import 'package:meta/meta.dart';
 class Product {
   final String id;
   final String name;
-  final int price;
-  final int oldPrice;
+  final double price;
+  final double oldPrice;
   final String image;
   final String description;
   final ProductCategory category;
@@ -29,8 +29,8 @@ class Product {
     return Product(
       id: data['id'],
       name: data['name'],
-      price: data['price'] != null ? data['price'].round() : null,
-      oldPrice: data['oldPrice'] != null ? data['oldPrice'].round() : null,
+      price: data['price'] != null ? data['price'] : 0,
+      oldPrice: data['oldPrice'] != null ? data['oldPrice'] : -1,
       image: data['image'] ?? '',
       description: data['description'] ?? '',
       category: data['category'],

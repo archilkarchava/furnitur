@@ -3,8 +3,9 @@ import 'package:furnitur/core/viewmodels/cart.dart';
 import 'package:furnitur/ui/shared/text_styles.dart';
 import 'package:furnitur/ui/widgets/cart/buy_button.dart';
 import 'package:furnitur/ui/widgets/cart/cart_list_item.dart';
-import 'package:furnitur/ui/widgets/product_details/back_button.dart';
+import 'package:furnitur/ui/widgets/cart/clear_cart_button.dart';
 import 'package:furnitur/ui/widgets/shared/appbar.dart';
+import 'package:furnitur/ui/widgets/shared/back_button.dart';
 import 'package:provider/provider.dart';
 
 class CartView extends StatelessWidget {
@@ -15,6 +16,7 @@ class CartView extends StatelessWidget {
       backgroundColor: Color(0xffFFFFFF),
       appBar: appBar(
         leftButton: backButton(context),
+        rightButton: ClearCartButton(),
         backgroundColor: Color(0xffFFFFFF),
       ),
       body: Padding(
@@ -39,7 +41,7 @@ class CartView extends StatelessWidget {
                   ),
                   Padding(
                       padding: const EdgeInsets.symmetric(vertical: 15),
-                      child: Text("Сумма: ₽${_cart.totalPrice}",
+                      child: Text("Сумма: ₽${_cart.totalPrice.round()}",
                           style: totalSumTextStyle)),
                   BuyButton(),
                 ],

@@ -6,8 +6,8 @@ import 'package:furnitur/ui/shared/text_styles.dart';
 import 'package:furnitur/ui/widgets/home/cart_button.dart';
 import 'package:furnitur/ui/widgets/product_details/add_in_cart_button.dart';
 import 'package:furnitur/ui/widgets/product_details/amount_selector.dart';
-import 'package:furnitur/ui/widgets/product_details/back_button.dart';
 import 'package:furnitur/ui/widgets/shared/appbar.dart';
+import 'package:furnitur/ui/widgets/shared/back_button.dart';
 import 'package:provider/provider.dart';
 
 Widget _displayPrice(Product product) {
@@ -15,15 +15,18 @@ Widget _displayPrice(Product product) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
-        Text("₽${product.price}", style: productDetailsSalePriceTextStyle),
+        Text("₽${product.price.round()}",
+            style: productDetailsSalePriceTextStyle),
         SizedBox(
           width: 20,
         ),
-        Text("₽${product.oldPrice}", style: productDetailsOldPriceTextStyle),
+        Text("₽${product.oldPrice.round()}",
+            style: productDetailsOldPriceTextStyle),
       ],
     );
   } else {
-    return Text("₽${product.price}", style: productDetailsPriceTextStyle);
+    return Text("₽${product.price.round()}",
+        style: productDetailsPriceTextStyle);
   }
 }
 

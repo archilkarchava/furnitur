@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:furnitur/core/models/cart_item.dart';
 import 'package:furnitur/core/models/customer.dart';
 import 'package:furnitur/core/models/order.dart';
+import 'package:furnitur/core/models/order_item.dart';
 import 'package:furnitur/core/services/api.dart';
 import 'package:furnitur/core/viewmodels/cart.dart';
 import 'package:provider/provider.dart';
@@ -74,9 +74,9 @@ class _ContactUsDialogState extends State<ContactUsDialog> {
                       lastName: _lastNameController.value.text,
                       phoneNumber: _phoneNumberController.value.text);
                   final items = _cart.itemsUnique;
-                  final List<CartItem> cartItems = [];
+                  final List<OrderItem> cartItems = [];
                   for (var item in items) {
-                    final cartItem = CartItem(
+                    final cartItem = OrderItem(
                       item: item,
                       quantity: _cart.getAmountOf(item),
                     );
