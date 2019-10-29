@@ -16,7 +16,7 @@ class CartView extends StatelessWidget {
       backgroundColor: Color(0xffFFFFFF),
       appBar: appBar(
         leftButton: backButton(context),
-        rightButton: ClearCartButton(),
+        rightButton: _cart.items.length > 0 ? ClearCartButton() : null,
         backgroundColor: Color(0xffFFFFFF),
       ),
       body: Padding(
