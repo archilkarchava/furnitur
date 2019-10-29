@@ -40,7 +40,7 @@ class CartListItem extends StatelessWidget {
                 children: <Widget>[
                   Text("${item.category.name} ${item.name}",
                       style: cartItemNameTextStyle),
-                  Text("₽${item.price.round() * _cart.getAmountOf(item)}",
+                  Text("₽${item.price.round()} * ${_cart.getAmountOf(item)}",
                       style: cartItemPriceTextStyle),
                 ],
               ),
