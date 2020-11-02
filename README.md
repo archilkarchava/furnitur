@@ -1,16 +1,6 @@
-# furnitur
+# Furnitur
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Furnitur is cross platform mobile application built using Flutter framework and [Firebase backend](https://github.com/archilkarchava/furnitur-firebase)
+<img src="https://user-images.githubusercontent.com/16840190/97866361-9ece8300-1d2d-11eb-811f-16046c26ba6c.png" alt="catalog" width="250"/>
+<img src="https://user-images.githubusercontent.com/16840190/97866370-a2620a00-1d2d-11eb-8d7d-b657563df0a3.png" alt="item" width="250"/>
+<img src="https://user-images.githubusercontent.com/16840190/97866377-a42bcd80-1d2d-11eb-84e8-0100f3a443c6.png" alt="cart" width="250"/>
